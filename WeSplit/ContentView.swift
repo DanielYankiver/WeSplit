@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+  var body: some View {
+    VStack {
+      NavigationStack {
+        Form {
+          Section {
+            Text("🛸 Hello, Earthlings 👽")
+          }
+
+          Section {
+            Text("🛸 Hello, Earthlings 👽")
+            Text("🛸 Hello, Earthlings 👽")
+            Text("🛸 Hello, Earthlings 👽")
+          }
+
+          Section {
+            Text("🛸 Hello, Earthlings 👽")
+            Text("🛸 Hello, Earthlings 👽")
+            Text("🛸 Hello, Earthlings 👽")
+            Text("🛸 Hello, Earthlings 👽")
+            Text("🛸 Hello, Earthlings 👽")
+            Text("🛸 Hello, Earthlings 👽")
+          }
         }
-        .padding()
+        .navigationTitle("SwiftUI")
+//        .navigationBarTitleDisplayMode(.inline)
+      }
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
