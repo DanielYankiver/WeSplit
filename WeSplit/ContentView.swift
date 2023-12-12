@@ -8,31 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+  let students = ["Harry", "Hermione", "Ron"]
+  @State private var selectedStudent = "Harry"
+
   var body: some View {
-    VStack {
-      NavigationStack {
-        Form {
-          Section {
-            Text("🛸 Hello, Earthlings 👽")
-          }
-
-          Section {
-            Text("🛸 Hello, Earthlings 👽")
-            Text("🛸 Hello, Earthlings 👽")
-            Text("🛸 Hello, Earthlings 👽")
-          }
-
-          Section {
-            Text("🛸 Hello, Earthlings 👽")
-            Text("🛸 Hello, Earthlings 👽")
-            Text("🛸 Hello, Earthlings 👽")
-            Text("🛸 Hello, Earthlings 👽")
-            Text("🛸 Hello, Earthlings 👽")
-            Text("🛸 Hello, Earthlings 👽")
+    NavigationStack {
+      Form {
+        Picker("Select your student", selection: $selectedStudent) {
+          ForEach(students, id: \.self) {
+            Text($0)
           }
         }
-        .navigationTitle("SwiftUI")
-//        .navigationBarTitleDisplayMode(.inline)
       }
     }
   }
@@ -41,3 +27,4 @@ struct ContentView: View {
 #Preview {
   ContentView()
 }
+
